@@ -19,7 +19,7 @@
         <!--Pitch Perfect-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecordSoundViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,7 @@
         <!--Reproduzir áudio-->
         <scene sceneID="wMg-GF-EfH">
             <objects>
-                <viewController title="Reproduzir áudio" id="C3w-p1-m7p" customClass="RecordingFilterViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Reproduzir áudio" id="C3w-p1-m7p" customClass="PlaySoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qH3-nY-hr3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,14 +82,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OLQ-gO-2XB">
                                                 <rect key="frame" x="0.0" y="135.5" width="90" height="180"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BJ-fh-lTC">
+                                                    <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BJ-fh-lTC">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                         <state key="normal" image="HighPitch"/>
                                                         <connections>
                                                             <action selector="hearSound:" destination="C3w-p1-m7p" eventType="touchUpInside" id="L0N-zW-GuN"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUO-u1-JGo">
+                                                    <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUO-u1-JGo">
                                                         <rect key="frame" x="0.0" y="90" width="90" height="90"/>
                                                         <state key="normal" image="Reverb"/>
                                                         <connections>
@@ -115,7 +115,7 @@
                                                             <action selector="stopSoundButton_Clicked:" destination="C3w-p1-m7p" eventType="touchUpInside" id="eIR-tj-W3A"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppI-WD-aS8">
+                                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppI-WD-aS8">
                                                         <rect key="frame" x="0.0" y="180" width="90" height="90"/>
                                                         <state key="normal" image="Slow"/>
                                                         <connections>
@@ -127,14 +127,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WjC-NK-fkk">
                                                 <rect key="frame" x="180" y="135.5" width="90" height="180"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTN-mj-qeX">
+                                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTN-mj-qeX">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                         <state key="normal" image="Echo"/>
                                                         <connections>
                                                             <action selector="hearSound:" destination="C3w-p1-m7p" eventType="touchUpInside" id="PEy-PM-umL"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHo-xc-uIx">
+                                                    <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHo-xc-uIx">
                                                         <rect key="frame" x="0.0" y="90" width="90" height="90"/>
                                                         <state key="normal" image="LowPitch"/>
                                                         <connections>
@@ -172,7 +172,7 @@
                     <connections>
                         <outlet property="echoButton" destination="YTN-mj-qeX" id="FPl-n4-bkr"/>
                         <outlet property="fastButton" destination="Jwk-qS-CVw" id="L5w-Bw-V6y"/>
-                        <outlet property="highPitch" destination="8BJ-fh-lTC" id="8Q3-NX-17O"/>
+                        <outlet property="highPitchButton" destination="8BJ-fh-lTC" id="Rmv-uu-7Lt"/>
                         <outlet property="lowPitchButton" destination="ZHo-xc-uIx" id="0Tb-J3-rzX"/>
                         <outlet property="reverbButton" destination="IUO-u1-JGo" id="toa-FF-AwP"/>
                         <outlet property="slowButton" destination="ppI-WD-aS8" id="Gvo-SG-Xtw"/>
